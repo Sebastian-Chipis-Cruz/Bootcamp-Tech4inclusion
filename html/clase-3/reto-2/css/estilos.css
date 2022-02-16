@@ -13,8 +13,16 @@ ul {
   display: inline-block;
   list-style: none;
 }
+h1 {
+  text-align: center;
+}
 #contenedor-main {
   background-color: lightskyblue;
+}
+.contenedor-lista {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
 }
 .carta-lista {
   display: flex;
@@ -22,11 +30,16 @@ ul {
   justify-content: space-evenly;
   background-color: blanchedalmond;
   width: 250px;
+  margin: 10px;
+}
+.item {
+  font-size: 24px;
+  text-align: center;
 }
 .item-icono {
   width: 50px;
   height: 50px;
-  font-size: 24px;
+  margin: 10px;
   line-height: 50px;
   text-align: center;
   border: 3px solid gold;
