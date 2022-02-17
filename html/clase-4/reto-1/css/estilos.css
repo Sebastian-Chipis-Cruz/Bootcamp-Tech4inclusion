@@ -16,6 +16,20 @@ ul {
 h1 {
   text-align: center;
 }
-#contenedor-main {
-  background-color: lightskyblue;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px black solid;
+  text-align: center;
+}
+thead {
+  background-color: rgb(28, 95, 126);
+  color: white;
+}
+tbody {
+  background-color: rgb(24, 125, 207);
+  color: #fff;
+}
+th,tr,td {
+  border: 3px black solid;
 }
