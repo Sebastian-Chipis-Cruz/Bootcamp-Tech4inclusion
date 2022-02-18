@@ -3,19 +3,38 @@ html {
 	box-sizing: border-box;
 	font-family: Arial, sans-serif;
    font-size: 16px;
+   background-color: #1d1d1d;
+  color: white;
 }
 *,*::after,*::before {
     padding: 0;
     margin: 0;
     box-sizing: inherit;
 }
-ul {
-  display: inline-block;
-  list-style: none;
-}
 h1 {
   text-align: center;
 }
-#contenedor-main {
-  background-color: lightskyblue;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px black solid;
+  text-align: left;
 }
+thead {
+  background-color: rgb(63,74,79);
+  color: white;
+}
+tbody {
+  background-color: rgb(46,49,51);
+  color: #fff;
+}
+th,td {
+  padding: 10px;
+}
+th,tr,td {
+  border: 3px black solid;
+}
+tr:nth-child(even) {
+  background-color: rgb(90, 89, 89);
+}
+.texto-rojo {color: #ff0000;}
