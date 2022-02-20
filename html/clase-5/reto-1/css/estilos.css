@@ -1,0 +1,59 @@
+/* estilos generales de main */
+html {
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+   font-size: 16px;
+}
+*,*::after,*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+ul {
+  display: inline-block;
+  list-style: none;
+}
+h1 {
+  text-align: center;
+}
+video {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+p {
+  width: 100%;
+  font-size: 1.5em;
+}
+button {
+  font-size: 24px;
+  width: 50%;
+  height: 50px;
+}
+.caja {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, .3);
+  color: #fff;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 200px;
+  left: 150px;
+}
+.titulo {
+  margin: 10px;
+  font-size: 1.3em;
+}
+.icono {
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+
+.subtitulo {
+  text-align: center;
+}
+.contenedor-botnes {
+  display: flex;
+  width: 100%;
+}

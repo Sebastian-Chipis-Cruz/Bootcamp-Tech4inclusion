@@ -4,12 +4,24 @@
 <head>
   <title>reto video </title>
   <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./css/estilos.css" />
+  <script src="./js/main.js" defer></script>
 </head>
 
 <body>
-  <video src="video.mp4" controls autoplay loop></video>
+  <video src="video.mp4" loop></video>
+<div class="caja">
+  <p class="titulo"><i class="fa-solid fa-film icono"></i>video</p>
+  <p class="subtitulo">arquitectura</p>
+  <div class="contenedor-botnes">
 
+  <button id="btnReproducir">Reproducir</button>
+  <button id="btnPausa">Pausa</button>
+  </div>
+</div>
 </body>
 
 </html>
