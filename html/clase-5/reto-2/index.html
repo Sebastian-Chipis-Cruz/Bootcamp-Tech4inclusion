@@ -14,7 +14,27 @@
 <body>
   <h1>reto Formularios</h1>
     <form>
-
+      <label for="txt-nombre">nombre</label>
+      <input type="text" id="txt-nombre" pattern="[a-zA-Z]+" required>
+      <label for="txt-edad">edad</label>
+      <input type="text" id="txt-edad" pattern="^[0-9]+$" required>
+      <label for="sel-pais">pais</label>
+      <select id="sel-pais" required>
+        <option selected>seleccione su país</option>
+        <option value="">México</option>
+        <option value="">Eetados Unidos</option>
+        <option value="">Canadá</option>
+        <option value="">Australia</option>
+        <option value="">Francia</option>
+      </select>
+      <fieldset>
+        <label>Sexo</label>
+        <input type="radio" id="radio-masculino">
+        <label for="radio-masculino">masculino</label>
+        <input type="radio" id="redio-memenino">
+        <label for="radio-memenino">memenino</label>
+      </fieldset>
+      <button type="submit">Enviar</button>
     </form>
 </body>
 
