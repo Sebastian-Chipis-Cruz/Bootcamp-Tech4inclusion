@@ -1,4 +1,4 @@
-const caja = document.getElementById("caja");
+const caja = document.getElementById("cajaQr");
 
 function getRandomInt(min, max) {
   // min and max included
