@@ -11,7 +11,7 @@ function getRandomInt(min, max) {
 	text: getRandomInt(1,64).toString(),
 	width: 250,
 	height: 180,
-	colorDark : "#000",
+	colorDark : "#2b7cfb",
 	colorLight : "#fff",
 	correctLevel : QRCode.CorrectLevel.H
 });
