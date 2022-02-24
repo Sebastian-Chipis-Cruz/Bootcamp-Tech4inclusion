@@ -1,7 +1,91 @@
 /* estilos generales de main */
-body {
+html {
 	box-sizing: border-box;
 	font-family: Arial, sans-serif;
    font-size: 16px;
-   background: url(../img/pajro.jpg) no-repeat ,linear-gradient(50deg, rgba(0,0,0,0.4) 0%, rgba(234,234,234,1)) 100%;
+}
+*,*::after,*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+body {
+	background-color: #0a0c1b;
+   /* #9e53cb */
+   /* background: url(../img/pajro.jpg) no-repeat ,linear-gradient(50deg, rgba(0,0,0,0.4) 0%, rgba(234,234,234,1)) 100%; */
+}
+/* estilos generales de main */
+.contenedor-main {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+.text-color {
+   color: #8f57b5;
+  font-weight: bold;
+}
+/* inicio titulo web */
+.titulo-web {
+  font-size: 35px;
+  color: #fff;
+  text-align: center; }
+
+/* final titulo web */
+/* inicio services */
+.contenedor-services {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titulo-services {
+  margin: 10px 0;
+  font-size: 35px;
+  font-weight: 100;
+}
+.caja {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2b7cfb;
+  width: 340px;
+  height: 225px;
+}
+.contenedor-carta-services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 350px;
+  height: 450px;
+  /* border-radius: 10px;
+  margin: 10px; */
+  background-color: #fff;
+  overflow: hidden;
+  text-align: center;
+  padding: 35px;
+}
+.contenedor-carta-services:nth-child(1) {
+  order: 2;
+}
+.contenedor-carta-services:nth-child(2) {
+  order: 1;
+}
+.carta-titulo-services {
+  font-size: 1.2em;
+}
+.carta-img-services {
+  width: 250px;
+  height: 180px;
+  margin: 5px;
+}
+.carta-data-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1.5;
+}
+.services--ilem {
+  background-color: #006dc6;
+  display: inline-block;
+  width: 350px;
 }
