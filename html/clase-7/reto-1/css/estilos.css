@@ -11,7 +11,7 @@ html {
 }
 body {
 	background-color: #0a0c1b;
-   /* #9e53cb */
+
    /* background: url(../img/pajro.jpg) no-repeat ,linear-gradient(50deg, rgba(0,0,0,0.4) 0%, rgba(234,234,234,1)) 100%; */
 }
 /* estilos generales de main */
@@ -31,61 +31,81 @@ body {
   text-align: center; }
 
 /* final titulo web */
-/* inicio services */
-.contenedor-services {
-  width: 100%;
+/* inicio */
+.contenedor {
+  width: 365px;
+  border-radius: 15px;
+  background-color: #1c2142;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
-.titulo-services {
-  margin: 10px 0;
-  font-size: 35px;
-  font-weight: 100;
-}
-.caja {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #2b7cfb;
-  width: 340px;
-  height: 225px;
-}
-.contenedor-carta-services {
+
+.contenedor-carta {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 350px;
+  /* width: 350px; */
   height: 450px;
-  /* border-radius: 10px;
-  margin: 10px; */
-  background-color: #fff;
   overflow: hidden;
   text-align: center;
-  padding: 35px;
 }
-.contenedor-carta-services:nth-child(1) {
+.contenedor-carta:nth-child(1) {
+  height: 600px;
   order: 2;
+  padding: 20px;
 }
-.contenedor-carta-services:nth-child(2) {
+.contenedor-carta:nth-child(2) {
   order: 1;
 }
-.carta-titulo-services {
-  font-size: 1.2em;
+.carta-titulo {
+  color: #fff;
+  font-size: 2em;
+  display: inline-block;
+  height: 100px;
 }
-.carta-img-services {
-  width: 250px;
-  height: 180px;
-  margin: 5px;
+.titulo {
+  margin: 20px 0;
 }
-.carta-data-services {
+.carta-data {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 20px 0;
   line-height: 1.5;
+  color: #b5b1b1;
 }
-.services--ilem {
-  background-color: #006dc6;
-  display: inline-block;
-  width: 350px;
+.carta-img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 15px 15px 0 0;
+  position: relative;
 }
+.capa {
+  position: absolute;
+  background-color: #57118648;
+  width: 365px;
+  height: 450px;
+  border-radius: 15px 15px 0 0;
+}
+.carta-resuls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.carta-resuls--ilem {
+  text-align: center;
+  font-size: 2em;
+  color: #fff;
+  margin: 10px 0;
+}
+
+/* Media Queries */
+/* @media screen and (min-width: 678px) {
+  .-services {
+    flex-direction: row;
+    padding: 35px
+    margin: 20px;
+}*/
