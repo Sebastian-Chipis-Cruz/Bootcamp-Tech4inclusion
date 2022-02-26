@@ -11,15 +11,8 @@ html {
 }
 body {
 	background-color: #0a0c1b;
-
-   /* background: url(../img/pajro.jpg) no-repeat ,linear-gradient(50deg, rgba(0,0,0,0.4) 0%, rgba(234,234,234,1)) 100%; */
 }
 /* estilos generales de main */
-.contenedor-main {
-  width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
-}
 .text-color {
    color: #8f57b5;
   font-weight: bold;
@@ -42,7 +35,6 @@ body {
   align-items: center;
   margin: 0 auto;
 }
-
 .contenedor-carta {
   display: flex;
   justify-content: center;
@@ -101,11 +93,41 @@ body {
   color: #fff;
   margin: 10px 0;
 }
-
 /* Media Queries */
-/* @media screen and (min-width: 678px) {
-  .-services {
+@media screen and (min-width: 678px) {
+    .contenedor {
     flex-direction: row;
-    padding: 35px
-    margin: 20px;
-}*/
+    width: 800px;
+ }
+  .contenedor-carta:nth-child(1) {
+    align-content: center;
+  }
+  .contenedor-carta:nth-child(2) {
+    justify-content: space-evenly;
+    width: 2000px;
+    height: 600px;
+    order: 2;
+  }
+  .titulo {
+    height: 100px;
+    margin: 20px 0 0;
+  }
+  .carta-img {
+    border-radius: 0 15px 0 0;
+  }
+  .capa {
+    height: 600px;
+    width: 359.133px;
+  }
+  .carta-data {
+    height: 100px;
+    margin: 0;
+  }
+  .carta-resuls {
+    height: 200px;
+    flex-direction: row;
+  }
+  .carta-resuls--ilem {
+    padding: 20px;
+  }
+}
