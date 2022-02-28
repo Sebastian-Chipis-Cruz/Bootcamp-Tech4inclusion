@@ -1,0 +1,65 @@
+/* estilos generales de main */
+html {
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+   font-size: 16px;
+}
+*,*::after,*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+.contenedor-main {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  position: absolute;
+}
+.caja {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    font-size: 25px;
+    background-color: gray;
+    position: relative;
+    top: 0;
+    left: -200px;
+}
+.mostrarCaja {
+    animation: mostrar 4s linear 0s forwards;
+}
+.ocultarCaja {
+    animation: ocultar 4s linear 0s backwards;
+}
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+@keyframes mostrar {
+        0% {
+        }
+        50% {
+            top: 0px;
+            left: -200px;
+        }
+        100% {
+            top: 10px;
+            left: 250px;
+        }
+    }
+@keyframes ocultar {
+    0% {
+        top: 0px;
+        left: 250px;
+    }
+    50% {
+        top: 0px;
+        left: -100px;
+    }
+    100% {
+        top: 0px;
+        left: -300px;
+    }
+    
+}
