@@ -5,17 +5,23 @@
   <meta charset="UTF-8">
   <title>reto (CRUD) fin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-  <style>
-    .caja {
-      width: 300px;
-      border: 3px #7a7777 solid;
-    }
-  </style>
-  <script defer src="./js/main.js"></script>
+  <!-- Bootstrap -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+  <!-- Default theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+      <style>
+        .caja {
+          width: 300px;
+          border: 3px #7a7777 solid;
+        }
+      </style>
+      <!-- JavaScript -->
+  <script defer src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 </head>
 
 <body>
@@ -34,7 +40,7 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <form action="javascript:void(0);" method="put" onsubmit="App.Actualizar()">
+          <form id="formEditData" method="post">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Editar tarjeta</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -42,25 +48,24 @@
           <div class="modal-body">
             <div class="mb-3">
                 <label class="form-label">ID</label>
-                <input type="text" readonly id="txtEditatId" class="form-control" aria-describedby="">
+                <input type="text" readonly id="txtEditId" class="form-control" aria-describedby="">
               </div>
-              <div class="mb-3">
+             <div class="mb-3">
                 <label class="form-label">Nombre</label>
-                <input type="text" id="txtNombre" class="form-control" aria-describedby="">
+                <input type="text" id="txtEditName" class="form-control" aria-describedby="">
               </div>
               <div class="mb-3">
                 <label class="form-label">Lenguajes</label>
-                <input type="text" id="txtLenguajes" class="form-control" aria-describedby="">
+                <input type="text" id="txtEditIdioms" class="form-control" aria-describedby="">
               </div>
               <div class="mb-3">
                 <label class="form-label">Reactions</label>
-                <input type="text" id="txtReactions" class="form-control" aria-describedby="">
+                <input type="text" id="txtEditReactions" class="form-control" aria-describedby="">
               </div>
               <div class="mb-3">
                 <label class="form-label">Contenido</label>
-                <input type="text" id="txtContenido" class="form-control" aria-describedby="">
+                <input type="text" id="txtEditContents" class="form-control" aria-describedby="">
               </div>
-
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -77,14 +82,14 @@
             tarjeta
           </div>
           <div class="card-body">
-            <form action="javascript:void(0);" method="post" onsubmit="App.Agregar()">
+            <form id="formSentData" method="post">
               <div class="mb-3">
                 <label class="form-label">Nombre</label>
-                <input type="text" id="txtNombre" class="form-control" aria-describedby="">
+                <input type="text" id="txtName" class="form-control" aria-describedby="">
               </div>
               <div class="mb-3">
                 <label class="form-label">Lenguajes</label>
-                <input type="text" id="txtLenguajes" class="form-control" aria-describedby="">
+                <input type="text" id="txtIdioms" class="form-control" aria-describedby="">
               </div>
               <div class="mb-3">
                 <label class="form-label">Reactions</label>
@@ -92,20 +97,20 @@
               </div>
               <div class="mb-3">
                 <label class="form-label">Contenido</label>
-                <input type="text" id="txtContenido" class="form-control" aria-describedby="">
+                <input type="text" id="txtContents" class="form-control" aria-describedby="">
               </div>
-              <button id="btnObte" type="submit" class="btn btn-success">agregar</button>
+              <button type="submit" class="btn btn-success">agregar</button>
             </form>
           </div>
         </div>
       </div>
       <div class="container">
-        <div class="row" id="caja-tarjeta">
-
-        </div>
+        <div class="row" id="box-card"></div>
       </div>
     </div>
   </main>
+    <script src="./js/main.js"></script>
+
 </body>
 
 </html>

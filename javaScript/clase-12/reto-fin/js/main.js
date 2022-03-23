@@ -1,19 +1,16 @@
-const caja = document.getElementById("caja-tarjeta");
-let btn = document.getElementById('btnObte');
-//let modal = new bootstrap.Modal(document.getElementById('exampleModal'), {keyboard: false});
-    //   modal.show();
-    //   modal.hide();
-const serverURL = 'http://localhost:4000/posts';
-function pintar() {
-  
-  let data = getPosts(serverURL);
+const postsList = document.getElementById("box-card");
+const formSentData = document.getElementById("formSentData");
+const txtName = document.getElementById("txtName");
+let serverURL = 'http://localhost:4000/posts';
+
+function renderPosts(dataResponse) {
   let datos = "";
-  data.then(( dataResponse => {
-    for(let valor of dataResponse) {
-      console.log(valor);
-            datos += (`
-          <div class="col-4">
-              <div class="card-body caja">
+  dataResponse.map((valor) => {
+      /* este codigo es temporal prueba */
+      //console.log(valor.keywords);
+            datos += /*html*/`
+          <div class="col-4 bg-ligt">
+              <div class="card-body" data-id="${valor.id}">
             <div class="card text-center">
               <div class="col-2 align-self-start">
                     <p>id ${valor.id}</p>
@@ -24,44 +21,27 @@ function pintar() {
                     <p class="card-text">${valor.title}</p>
                     <ul class="list-group">
                       <li class="list-group-item">
-                      ${valor.keywords[0]}
+                      
                       </li>
-                      <li class="list-group-item">
-                      ${valor.keywords[1]}
                       </li>
-                      <li class="list-group-item">
-                      ${valor.keywords[2]}
-                      </li>
-                      <p class="card-text ">${valor.content}</p>
+                      <p class="card-text">${valor.content}</p>
                        </ul>
                     <div class="col-3 align-self-end">
-                      <p class="card-text ">reactions ${valor.reactions}</p>
+                      <p class="card-text">reactions ${valor.reactions}</p>
                     </div>
-                  </div>
-                  <div class="row justify-content-end">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-warning" onclick="App.Editar($)">Editar</button>
-                        <button type="button" class="btn btn-danger" onclick="App.Borrar($)">Borrar</button>
+                    <div class="row justify-content-end">
+                      <div class="btn-group">
+                          <button type="button" class="btn btn-warning" id="Editar">Editar</button>
+                          <button type="button" class="btn btn-danger" id="Borrar">Borrar</button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
           </div>
-          `);
-      }
-      return caja.innerHTML = datos;
-
+          `});
+         postsList.innerHTML = datos;
     }
-  ));
-}
-async function getPosts(url = '', data = {}) {
-    const response = await fetch(url, {
-      method: 'GET', 
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    });
-    return response.json(); 
-}
-pintar();
-// npm run serverserver
+fetch(serverURL)
+  .then(response => response.json())
+  .then(dataResponse => renderPosts(dataResponse));
