@@ -45,3 +45,23 @@ function renderPosts(dataResponse) {
 fetch(serverURL)
   .then(response => response.json())
   .then(dataResponse => renderPosts(dataResponse));
+
+postsList.addEventListener('click', (event) =>{
+  event.preventDefault();
+  let btnEd = event.target.id == "Editar";
+  let btnBo = event.target.id == "Borrar";
+  //let id = event.target.parentElement.dataset.id;
+  //
+  let id = event.target.parentNode.dataset.id;
+  console.log(id);
+  console.log(`${serverURL}/${id}`);
+  if (btnBo) {
+    fetch(`${serverURL}/${id}`,{
+      method: "DELETE",
+    })
+    .then(response => response.json())
+    .then(() => renderPosts(dataResponse))
+    .catch(err => {console.error(err);})
+    console.log("Borrar");
+  }  
+});
