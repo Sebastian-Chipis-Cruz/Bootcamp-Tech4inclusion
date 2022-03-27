@@ -8,9 +8,12 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
   <!-- Bootstrap -->
   <script defer src="./js/main.js"></script>
+  <script defer src="./js/post.js"></script>
 </head>
 
 <body>
@@ -25,57 +28,219 @@
   </header>
   <main class="container">
     <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            datos personales
-          </div>
-          <div class="card-body">
-            <form id="formSentData" method="post">
-              <div class="mb-3">
-                <label class="form-label">identificación:</label>
+      <div class="col-md-7">
+        <form id="formSentData" method="post">
+          <fieldset class="form-group border border-2">
+            <legend>datos personales</legend>
+            <div class="mb-3">
+              <label class="form-label" for="numAge">1. Edad:</label>
+              <input type="number" id="numAge" class="form-control" aria-describedby="help-Age">
+              <span id="help-Age">Sólo números, ejemplo: 4</span>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">2. Género o Sexo:</label>
+              <select class="form-select" aria-label="Default select example" id="selGender" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">Mujer</option>
+                <option value="2">Hombre</option>
+                <option value="3">Otro</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">3. Tipos de Discapacidad:</label>
+              <select class="form-select" aria-label="Default select example" id="selTypes-of-disability"
+                aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">4. Estado:</label>
+              <select class="form-select" aria-label="Default select example" id="selCondition" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">5. Municipio:</label>
+              <select class="form-select" aria-label="Default select example" id="selMunicipality" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">6. tienes o tuviste covid ?:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">si</option>
+                <option value="2">no</option>
+              </select>
+            </div>
+          </fieldset>
+          <fieldset class="form-group border border-2">
+            <legend>datos Otros</legend>
+            <div class="mb-3">
+              <label class="form-label">7. Qué tipo de prueba determinó que fue positivo a COVID:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">prueba rápida de sangre</option>
+                <option value="1">prueba rápida de antígeno</option>
+                <option value="1">prueba PCR</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">8. Ha sido diagnosticado con alguna enfermedad crónico degenerativa antes
+                decontagiarse de COVID:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">si</option>
+                <option value="2">no</option>
+                <option value="2">Otro</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">9. ¿Cómo fueron los síntomas?:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">Asintomático</option>
+                <option value="1">Síntomas leves</option>
+                <option value="1">Síntomas moderados</option>
+                <option value="1">Graves</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">10. Requirió hospitalización:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">si</option>
+                <option value="2">no</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">11. Con que tipo de Servicio Médico cuenta?:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">IMSS</option>
+                <option value="2">ISSSTE</option>
+                <option value="2">Otro</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">12. Como consecuencia del COVID, desarrollo secuelas que disminuyeran sus
+                funciones vitales, provocando una
+                Discapacidad?:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">si</option>
+                <option value="2">no</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">13. Si su respuesta es afirmativa, Cuál?:</label>
+              <input type="text" id="" class="form-control" aria-describedby="help-">
+              <span id="help-"></span>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+                <div class="col">
+                  <label class="form-label">14. Teniendo una Discapacidad, desarrollo secuelas a consecuencia del
+                    COVID?:</label>
+                  <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                    <option selected>Abrir este menú de selección</option>
+                    <option value="1">si</option>
+                    <option value="2">no</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label class="form-label" for="">Otro</label>
+                  <input type="text" class="form-control" aria-label="">
+                </div>
               </div>
-              <div class="mb-3">
-                <label class="form-label" for="numAge">Edad</label>
-                <input type="number" id="numAge" class="form-control" aria-describedby="help-Age">
-                <span id="help-Age">Sólo números, ejemplo: 4</span>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Género</label>
-                <select class="form-select" aria-label="Default select example" id="selGender" aria-describedby="">
-                  <option selected>Abrir este menú de selección</option>
-                  <option value="1">Mujer</option>
-                  <option value="2">Hombre</option>
-                  <option value="3">Otro</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Tipos de Discapacidad</label>
-                <select class="form-select" aria-label="Default select example" id="selTypes-of-disability" aria-describedby="">
-                  <option selected>Abrir este menú de selección</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Municipio</label>
-                <select class="form-select" aria-label="Default select example" id="selMunicipality" aria-describedby="">
-                  <option selected>Abrir este menú de selección</option>
-                  <option value="1">One</option>
-                </select>
-             </div>
-              <div class="mb-3">
-                <label class="form-label">tienes o tuviste covid ?</label>
-                <select class="form-select" aria-label="Default select example" id="Covid" aria-describedby="">
-                  <option selected>Abrir este menú de selección</option>
-                  <option value="1">si</option>
-                  <option value="2">no</option>
-                </select>
-              </div>
-              <button type="submit" class="btn btn-success" value="Enviar">Enviar</button>
-            </form>
-          </div>
-        </div>
-      </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">15. A consecuencia de COVID, ¿algún familiar cercano con discapacidad
+                falleció?:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">si</option>
+                <option value="2">no</option>
+              </select>
+            </div>
 
+          </fieldset>
+          <fieldset class="form-group border border-2">
+            <legend>datos Otros</legend>
+            <div class="mb-3">
+              <label class="form-label">16. ¿Contabas con empleo antes de la contingencia sanitaria por
+                COVID?:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">si</option>
+                <option value="2">no</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">17. ¿Continuó laborando aún en contingencia?:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">si</option>
+                <option value="2">no</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">18. ¿Recibió algún tipo de apoyo por parte del Gobierno?:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">si</option>
+                <option value="2">no</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">19. Si su respuesta es afirmativa, ¿de qué tipo?:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">Económico</option>
+                <option value="2">Especie</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">20. ¿Recibió algún tipo de apoyo por parte de instituciones privadas o
+                asociaciones?:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">si</option>
+                <option value="2">no</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">21. Si la respuesta es afirmativa, ¿ A qué tipo de servicio o programa
+                social ha tenido acceso?: (seleccione una o varias)</label>
+              <select multiple class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="">Plan alimentario</option>
+                <option>Prevención de salud</option>
+                <option>física o mental</option>
+                <option>Emprendimiento</option>
+                <option> Habilidades digitales</option>
+                <option>Subsidios</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">22. ¿Cómo obtuviste la información? Búsqueda en Internet:</label>
+              <select class="form-select" aria-label="Default select example" id="" aria-describedby="">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">Redes sociales</option>
+                <option value="2">Recomendación</option>
+                <option value="2">Anuncios publicitarios</option>
+                <option value="2">Oficinas de gobierno</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success" value="Enviar">Enviar</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
   </main>
 </body>
 
