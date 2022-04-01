@@ -1,18 +1,18 @@
 const listDisabilities = [
     "parálisis cerebral infantil (PCI)",
-    "sindroms de down",
+    "Motriz",
+    "sindrome de down",
     "multiple",
     "autista",
     "intelectual",
     "psicosocial",
-    "auditiva",
+    "Auditiva (Sordera)",
     "visual",
     "Disautonomía",
     "Personas de Talla Baja",
-    "acondroplasis",
     "Distrofia Muscular",
     "esclerosis",
-    "Christians"
+    "osteogénesis imperfecta (huesos de cristal)"
     ];
 const listSates = ["Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Coahuila", "Colima", "Chiapas", "Chihuahua", "Durango", "Distrito Federal", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Estado de México", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas"];
 
