@@ -1,7 +1,10 @@
+const serverURL = 'http://localhost:4000/posts';
 const postsList = document.getElementById("box-card");
 const formSentData = document.getElementById("formSentData");
 const txtName = document.getElementById("txtName");
-const serverURL = 'http://localhost:4000/posts';
+const txtIdioms = document.getElementById("txtIdioms");
+const numReactions = document.getElementById("numReactions");
+const txtContents = document.getElementById("txtContents");
 
 function renderPosts(dataResponse) {
   let datos = "";
@@ -62,3 +65,25 @@ postsList.addEventListener('click', (event) =>{
     .catch(err => {console.error(err);})
   }  
 });
+async function addPost(url = '', data = {}) {
+    const response = await fetch(url, {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    return response.json(); 
+}
+const dataSend = addPost;
+formSentData.addEventListener('submit',(event) =>{
+  event.preventDefault();
+  dataSend(serverURL,{
+    "title": txtName.value,
+      "keywords":txtIdioms.value.split(","),
+      "reactions": numReactions.value,
+      "content": txtContents.value
+
+  })
+  console.log(25);
+})
