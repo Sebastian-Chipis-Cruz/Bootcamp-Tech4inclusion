@@ -1,7 +1,7 @@
 const postsList = document.getElementById("box-card");
 const formSentData = document.getElementById("formSentData");
 const txtName = document.getElementById("txtName");
-let serverURL = 'http://localhost:4000/posts';
+const serverURL = 'http://localhost:4000/posts';
 
 function renderPosts(dataResponse) {
   let datos = "";
@@ -10,7 +10,7 @@ function renderPosts(dataResponse) {
       //console.log(valor.keywords);
             datos += /*html*/`
           <div class="col-4 bg-ligt">
-              <div class="card-body" data-id="${valor.id}">
+              <div class="card-body">
             <div class="card text-center">
               <div class="col-2 align-self-start">
                     <p>id ${valor.id}</p>
@@ -30,9 +30,9 @@ function renderPosts(dataResponse) {
                       <p class="card-text">reactions ${valor.reactions}</p>
                     </div>
                     <div class="row justify-content-end">
-                      <div class="btn-group">
-                          <button type="button" class="btn btn-warning" id="Editar">Editar</button>
-                          <button type="button" class="btn btn-danger" id="Borrar">Borrar</button>
+                      <div class="btn-group"  data-id="${valor.id}">
+                          <button type="button" class="btn btn-warning" id="btnEdit">Editar</button>
+                          <button type="button" class="btn btn-danger" id="btnDelete">Borrar</button>
                       </div>
                     </div>
                   </div>
@@ -48,20 +48,17 @@ fetch(serverURL)
 
 postsList.addEventListener('click', (event) =>{
   event.preventDefault();
-  let btnEd = event.target.id == "Editar";
-  let btnBo = event.target.id == "Borrar";
-  //let id = event.target.parentElement.dataset.id;
-  //
-  let id = event.target.parentNode.dataset.id;
-  console.log(id);
-  console.log(`${serverURL}/${id}`);
-  if (btnBo) {
+  let btnEdit = event.target.id == "btnEdit";
+  let btnDelete = event.target.id == "btnDelete";
+  
+  const id = event.target.parentNode.dataset.id;
+
+  if (btnDelete) {
     fetch(`${serverURL}/${id}`,{
       method: "DELETE",
     })
     .then(response => response.json())
     .then(() => renderPosts(dataResponse))
     .catch(err => {console.error(err);})
-    console.log("Borrar");
   }  
 });
