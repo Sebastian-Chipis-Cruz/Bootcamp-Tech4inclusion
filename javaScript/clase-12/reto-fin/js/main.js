@@ -5,6 +5,13 @@ const txtName = document.getElementById("txtName");
 const txtIdioms = document.getElementById("txtIdioms");
 const numReactions = document.getElementById("numReactions");
 const txtContents = document.getElementById("txtContents");
+const formEdiData = document.getElementById("formEditData");
+const txtEditId = document.getElementById("txtEditId");
+const txtEditName = document.getElementById("txtEditName");
+const txtEditIdioms = document.getElementById("txtEditIdioms");
+const numEditReactions = document.getElementById("numEditReactions");
+const txtEditContents = document.getElementById("txtEditContents");
+const modal = new bootstrap.Modal(document.getElementById('exampleModal'), {keyboard: false});
 
 function renderPosts(dataResponse) {
   let datos = "";
@@ -49,6 +56,36 @@ fetch(serverURL)
   .then(response => response.json())
   .then(dataResponse => renderPosts(dataResponse));
 
+async function addPost(url = "",option ="", data = {}) {
+    const response = await fetch(url, {
+      method: option, 
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    return response.json(); 
+}
+const dataSend = addPost;
+formSentData.addEventListener('submit',(event) =>{
+  event.preventDefault();
+  dataSend(serverURL,"POST",{
+    "title": txtName.value,
+      "keywords":txtIdioms.value.split(","),
+      "reactions": numReactions.value,
+      "content": txtContents.value
+  });
+});
+formEdiData.addEventListener('submit',(event) =>{
+  event.preventDefault();
+  dataSend(`${serverURL}/${txtEditId.value}`,"PUT",{
+    "title": txtEditName.value,
+    "keywords":txtEditIdioms.value.split(","),
+    "reactions": numEditReactions.value,
+    "content": txtEditContents.value
+  })
+  modal.hide();
+});
 postsList.addEventListener('click', (event) =>{
   event.preventDefault();
   let btnEdit = event.target.id == "btnEdit";
@@ -63,27 +100,21 @@ postsList.addEventListener('click', (event) =>{
     .then(response => response.json())
     .then(() => renderPosts(dataResponse))
     .catch(err => {console.error(err);})
-  }  
+  }
+  if (btnEdit) {
+      fetch(`${serverURL}/${id}`)
+      .then(response => response.json())
+      .then(dataResponse => {
+        txtEditId.value =  dataResponse.id;
+        txtEditName.value = dataResponse.title;
+        txtEditIdioms.value = dataResponse.keywords.join();
+        numEditReactions.value = dataResponse.reactions;
+        txtEditContents.value = dataResponse.content;
+      })
+      .catch(err => {
+        console.error(err);
+      });
+ 
+      modal.show();
+  }
 });
-async function addPost(url = '', data = {}) {
-    const response = await fetch(url, {
-      method: 'POST', 
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    });
-    return response.json(); 
-}
-const dataSend = addPost;
-formSentData.addEventListener('submit',(event) =>{
-  event.preventDefault();
-  dataSend(serverURL,{
-    "title": txtName.value,
-      "keywords":txtIdioms.value.split(","),
-      "reactions": numReactions.value,
-      "content": txtContents.value
-
-  })
-  console.log(25);
-})

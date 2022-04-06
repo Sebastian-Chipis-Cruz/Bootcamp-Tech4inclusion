@@ -18,8 +18,8 @@
   <header class="p-2">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand bd-black" href="#">
-          <h1 class="bg-dark text-light">reto (CRUD) fin</h1>
+        <a class="navbar-brand" href="#">
+          <h1>reto (CRUD) fin</h1>
         </a>
       </div>
     </nav>
@@ -42,19 +42,21 @@
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Nombre</label>
-                  <input type="text" id="txtEditName" class="form-control" aria-describedby="">
+                  <input type="text" autocomplete="off" id="txtEditName" class="form-control" aria-describedby="">
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Lenguajes</label>
-                  <input type="text" id="txtEditIdioms" class="form-control" aria-describedby="">
+                  <input type="text" autocomplete="off" id="txtEditIdioms" class="form-control" aria-describedby="">
+                  <span class="form-text">separador con un coma ,</span>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Reactions</label>
-                  <input type="text" id="txtEditReactions" class="form-control" aria-describedby="">
+                  <input type="number" autocomplete="off" min="1" id="numEditReactions" class="form-control"
+                    aria-describedby="">
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Contenido</label>
-                  <input type="text" id="txtEditContents" class="form-control" aria-describedby="">
+                  <input type="text" autocomplete="off" id="txtEditContents" class="form-control" aria-describedby="">
                 </div>
               </div>
               <div class="modal-footer">
@@ -80,6 +82,7 @@
               <div class="mb-3">
                 <label class="form-label">Lenguajes</label>
                 <input type="text" autocomplete="off" id="txtIdioms" class="form-control" aria-describedby="">
+                <span class="form-text">separador con un coma ,</span>
               </div>
               <div class="mb-3">
                 <label class="form-label">Reactions</label>
