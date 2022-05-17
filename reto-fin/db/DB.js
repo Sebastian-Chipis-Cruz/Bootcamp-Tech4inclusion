@@ -3,7 +3,7 @@ const listDisabilities = [
     "Motriz",
     "sindrome de down",
     "multiple",
-    "autista",
+    "autismo",
     "intelectual",
     "psicosocial",
     "Auditiva (Sordera)",
